@@ -1,0 +1,723 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73BBFF68-43AF-4652-91EA-CA8AF3BBC5AF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SeldatMRMS</RootNamespace>
+    <AssemblyName>SeldatMRMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Cyotek.Drawing.BitmapFont, Version=1.0.0.0, Culture=neutral, PublicKeyToken=58daa28b0b2de221, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cyotek.Drawing.BitmapFont.1.3.2\lib\net20\Cyotek.Drawing.BitmapFont.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=3.4.1.2976, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.1.2976\lib\net35\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World, Version=3.4.1.2976, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EMGU.CV.3.4.1.2976\lib\net35\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="FluorineFx">
+      <HintPath>..\..\..\..\Documents\Ozeki\Ozeki SDK\Examples\Resources\NET4\FluorineFx.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.1.0.0\lib\portable-net45+win8+wpa81+wp8\HelixToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.Wpf.1.0.0\lib\net45\HelixToolkit.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf.SharpDX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.Wpf.SharpDX.1.0.0\lib\net45\HelixToolkit.Wpf.SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=2.0.3961.42360, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp.UserInterface">
+      <HintPath>.\OpenCvSharp.UserInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="OzekiSDK, Version=1.8.22.0, Culture=neutral, PublicKeyToken=4812fb35129b8487, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Ozeki\Ozeki SDK\Examples\Resources\NET4\OzekiSDK.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SharpDX, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.4.0.1\lib\net45\SharpDX.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.D3DCompiler, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.D3DCompiler.4.0.1\lib\net45\SharpDX.D3DCompiler.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct2D1, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct2D1.4.0.1\lib\net45\SharpDX.Direct2D1.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D11.4.0.1\lib\net45\SharpDX.Direct3D11.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D11.Effects, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D11.Effects.4.0.1\lib\net45\SharpDX.Direct3D11.Effects.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Direct3D9, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Direct3D9.4.0.1\lib\net45\SharpDX.Direct3D9.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.DXGI, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.DXGI.4.0.1\lib\net45\SharpDX.DXGI.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Mathematics.4.0.1\lib\net45\SharpDX.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web">
+      <HintPath>..\packages\SystemWebPackage.1.0.0\lib\System.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Controls.DataVisualization.Toolkit.4.0.0.0\lib\net40-Client\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.5.0.1\lib\net45\YamlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.1.7.430, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZedGraph.5.1.7\lib\net35-Client\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Communication\BridgeNodeServerCtrl.cs" />
+    <Compile Include="Communication\JObjectExtensions.cs" />
+    <Compile Include="Communication\Message.cs" />
+    <Compile Include="Communication\MessageTypes.cs" />
+    <Compile Include="Communication\Operation.cs" />
+    <Compile Include="Communication\RosSocket.cs" />
+    <Compile Include="CtrlCMD.cs" />
+    <Compile Include="Management\FormManager\ChargeStationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\FormManager\ChargeStationForm.Designer.cs">
+      <DependentUpon>ChargeStationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\FormManager\LiveViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\FormManager\LiveViewForm.Designer.cs">
+      <DependentUpon>LiveViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\FormManager\RobotControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\FormManager\RobotControl.Designer.cs">
+      <DependentUpon>RobotControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\FormManager\SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\FormManager\SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\HalfPointProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\HalfPointProperties.Designer.cs">
+      <DependentUpon>HalfPointProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\IpScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\IpScanner.Designer.cs">
+      <DependentUpon>IpScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\LoadModel.cs" />
+    <Compile Include="Management\LogWriter.cs" />
+    <Compile Include="Management\OrderManager\Area.cs" />
+    <Compile Include="Management\OrderManager\CameraAgentManager.cs" />
+    <Compile Include="Management\OrderManager\Orders.cs" />
+    <Compile Include="Management\PathTaskManager.cs" />
+    <Compile Include="Management\RegistrationAgent.cs" />
+    <Compile Include="Management\RobotManagent\ChargerAgent.cs" />
+    <Compile Include="Management\RobotManagent\CommandSetsToRobotAgent.cs" />
+    <Compile Include="Management\RobotManagent\DataTranformation.cs" />
+    <Compile Include="Management\RobotManagent\RobotAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\RobotManagent\RobotAgent.Designer.cs">
+      <DependentUpon>RobotAgent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\RobotManagent\RobotProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\RobotManagent\RobotProperties.Designer.cs">
+      <DependentUpon>RobotProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\SaveModel.cs" />
+    <Compile Include="Management\TrafficManager\AreaManager.cs" />
+    <Compile Include="Management\TrafficManager\CommandSetMultiRobotAgents.cs" />
+    <Compile Include="Management\TrafficManager\MultiRobotTraffic.cs" />
+    <Compile Include="Management\TrafficManager\ReadyArea.cs" />
+    <Compile Include="Management\TrafficManager\TrafficForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\TrafficManager\TrafficForm.Designer.cs">
+      <DependentUpon>TrafficForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChargerModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\ChargerModel.Designer.cs">
+      <DependentUpon>ChargerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CheckinModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\CheckinModel.Designer.cs">
+      <DependentUpon>CheckinModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CheckoutModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\CheckoutModel.Designer.cs">
+      <DependentUpon>CheckoutModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CheckOutPoint.cs" />
+    <Compile Include="Model\CheckInPoint.cs" />
+    <Compile Include="Model\CombinationModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\CombinationModels.Designer.cs">
+      <DependentUpon>CombinationModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GroupModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\GroupModel.Designer.cs">
+      <DependentUpon>GroupModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GroupPathModels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\GroupPathModels.Designer.cs">
+      <DependentUpon>GroupPathModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HighwayModel.cs" />
+    <Compile Include="Model\LineInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\LineInfo.designer.cs">
+      <DependentUpon>LineInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\LinkModel.cs" />
+    <Compile Include="Model\PathProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\PathProperties.Designer.cs">
+      <DependentUpon>PathProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReadyModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\ReadyModel.Designer.cs">
+      <DependentUpon>ReadyModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RegistrationModels.cs" />
+    <Compile Include="Model\RobotModel.cs" />
+    <Compile Include="Model\SetName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\SetName.Designer.cs">
+      <DependentUpon>SetName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Management\TasksManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Management\TasksManagement.Designer.cs">
+      <DependentUpon>TasksManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\StationModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\StationModel.designer.cs">
+      <DependentUpon>StationModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PixelRuler.cs" />
+    <Compile Include="CommandSet\CommandSet.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\ConnectBridge.cs" />
+    <Compile Include="RobotView\ControlRobotInterface.cs" />
+    <Compile Include="RobotView\CreatePallet.cs" />
+    <Compile Include="RobotView\Path\CreateRobotPathPlan.cs" />
+    <Compile Include="RobotView\CurveInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\CurveInfo.Designer.cs">
+      <DependentUpon>CurveInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\GlobalVariables.cs" />
+    <Compile Include="RobotView\Path\ExportPaths.cs" />
+    <Compile Include="RobotView\Path\GroupPaths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Path\GroupPaths.Designer.cs">
+      <DependentUpon>GroupPaths.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Path\ImportPaths.cs" />
+    <Compile Include="RobotView\Path\SetLineParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Path\SetLineParams.Designer.cs">
+      <DependentUpon>SetLineParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Map.cs" />
+    <Compile Include="RobotView\MapSettingF.xaml.cs">
+      <DependentUpon>MapSettingF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Node.cs" />
+    <Compile Include="RobotView\Path\PathStrategicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Path\PathStrategicForm.Designer.cs">
+      <DependentUpon>PathStrategicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Robot3D.cs" />
+    <Compile Include="RobotView\RobotView3D.xaml.cs">
+      <DependentUpon>RobotView3D.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RobotView\Path\SetCurveParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RobotView\Path\SetCurveParams.Designer.cs">
+      <DependentUpon>SetCurveParams.cs</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="RobotView\MapSettingF.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RobotView\RobotView3D.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Management\DataSetting.cs" />
+    <Compile Include="Management\Interface.cs" />
+    <Compile Include="Model\HalfPoint.cs" />
+    <Compile Include="Model\ModelView.cs" />
+    <Compile Include="Model\ParkPoint.cs" />
+    <Compile Include="Model\PathModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Management\FormManager\ChargeStationForm.resx">
+      <DependentUpon>ChargeStationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\FormManager\LiveViewForm.resx">
+      <DependentUpon>LiveViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\FormManager\RobotControl.resx">
+      <DependentUpon>RobotControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\FormManager\SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\HalfPointProperties.resx">
+      <DependentUpon>HalfPointProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\IpScanner.resx">
+      <DependentUpon>IpScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\RobotManagent\RobotAgent.resx">
+      <DependentUpon>RobotAgent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\RobotManagent\RobotProperties.resx">
+      <DependentUpon>RobotProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\TrafficManager\TrafficForm.resx">
+      <DependentUpon>TrafficForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ChargerModel.resx">
+      <DependentUpon>ChargerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\CheckinModel.resx">
+      <DependentUpon>CheckinModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\CheckoutModel.resx">
+      <DependentUpon>CheckoutModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\CombinationModels.resx">
+      <DependentUpon>CombinationModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\GroupModel.resx">
+      <DependentUpon>GroupModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\GroupPathModels.resx">
+      <DependentUpon>GroupPathModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\LineInfo.resx">
+      <DependentUpon>LineInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\PathProperties.resx">
+      <DependentUpon>PathProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\ReadyModel.resx">
+      <DependentUpon>ReadyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\SetName.resx">
+      <DependentUpon>SetName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Management\TasksManagement.resx">
+      <DependentUpon>TasksManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\StationModel.resx">
+      <DependentUpon>StationModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\CurveInfo.resx">
+      <DependentUpon>CurveInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Path\GroupPaths.resx">
+      <DependentUpon>GroupPaths.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Path\PathStrategicForm.resx">
+      <DependentUpon>PathStrategicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Path\SetCurveParams.resx">
+      <DependentUpon>SetCurveParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RobotView\Path\SetLineParams.resx">
+      <DependentUpon>SetLineParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\Resources\yaml\station_4.yml" />
+    <None Include="bin\Debug\Resources\yaml\station_5.yml" />
+    <None Include="RobotView\Media\ANH LUẬT 09-02-2017.stl" />
+    <None Include="RobotView\Media\pallet.stl" />
+    <None Include="RobotView\Media\pallet2.stl" />
+    <None Include="RobotView\Media\pallet3.stl" />
+    <None Include="RobotView\Media\pallet4.stl" />
+    <None Include="RobotView\Media\pallet6.stl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
+    <Folder Include="Management\LogText\" />
+    <Folder Include="Management\Store\" />
+    <Folder Include="Store\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pallet pickup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halfpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halfpoint2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\path2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\station.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stations.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forklift_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\station_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\path_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drag-Hand_2-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross_docking_icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\putaway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\putaway2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\putawayarea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dockingarea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charge area.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clearobject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\halfpoint_op.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seldat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RobotView\Media\3d.png" />
+    <Resource Include="RobotView\Media\arrow.gif" />
+    <Resource Include="RobotView\Media\connect.png" />
+    <Resource Include="RobotView\Media\disconnect.png" />
+    <Resource Include="RobotView\Media\go.png" />
+    <Resource Include="RobotView\Media\joystick.png" />
+    <Resource Include="RobotView\Media\location.png" />
+    <Resource Include="RobotView\Media\measure.png" />
+    <Resource Include="RobotView\Media\navigation2.png" />
+    <Resource Include="RobotView\Media\New Text Document.txt" />
+    <Resource Include="RobotView\Media\pallet.png" />
+    <Resource Include="RobotView\Media\remove.png" />
+    <Resource Include="RobotView\Media\seldat.png" />
+    <Resource Include="RobotView\Media\selectmap.png" />
+    <Resource Include="RobotView\Media\Setting.png" />
+    <Resource Include="RobotView\Media\stop.png" />
+    <Resource Include="RobotView\Media\Zoom.png" />
+    <Resource Include="RobotView\Map\robot.jpg" />
+    <None Include="bin\Debug\Resources\selecticon2.png" />
+    <None Include="bin\Debug\Resources\start.png" />
+    <None Include="bin\Debug\Resources\stop2.png" />
+    <Content Include="cv210.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cvaux210.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cxcore210.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="highgui210.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="License-LGPL.txt" />
+    <Resource Include="Management\Img\go.png" />
+    <Content Include="ml210.dll" />
+    <Content Include="OpenCvSharp.CPlusPlus.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenCvSharp.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenCvSharp.MachineLearning.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenCvSharp.UserInterface.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="OpenCvSharpExtern.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_ffmpeg210.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\seldat_old.png" />
+    <None Include="Resources\navigation.png" />
+    <None Include="RobotView\Media\navigation.png" />
+    <None Include="RobotView\Media\reset.png" />
+    <Resource Include="RobotView\Media\selecticon2.png" />
+    <None Include="Resources\ipscan.png" />
+    <None Include="Resources\RobotStore.png" />
+    <None Include="Resources\path.png" />
+    <None Include="Resources\robot.png" />
+    <None Include="Resources\run.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\select.png" />
+    <None Include="Resources\stop3.png" />
+    <None Include="Resources\3dmap.png" />
+    <None Include="Resources\docking.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\setting2.png" />
+    <None Include="Resources\putaway3.png" />
+    <None Include="Resources\robot2.png" />
+    <None Include="Resources\docking2.png" />
+    <None Include="Resources\putaway4.png" />
+    <None Include="Resources\closehand.png" />
+    <None Include="Resources\openhand.png" />
+    <None Include="Resources\putaway5.png" />
+    <None Include="Resources\docking3.png" />
+    <None Include="Resources\mixed0.png" />
+    <None Include="Resources\station1.png" />
+    <None Include="Resources\cursor.png" />
+    <None Include="Resources\phat_handopen.ico" />
+    <None Include="Resources\phat_robot.png" />
+    <None Include="Resources\phat_settting.png" />
+    <None Include="Resources\phat_robot2.png" />
+    <None Include="Resources\phat_setting.png" />
+    <None Include="Resources\phat_station.png" />
+    <None Include="Resources\phat_charger.png" />
+    <None Include="Resources\phat_checkin.png" />
+    <None Include="Resources\phat_checkout.png" />
+    <None Include="Resources\phat_docking.png" />
+    <None Include="Resources\phat_halfpoint.png" />
+    <None Include="Resources\phat_handclose.png" />
+    <None Include="Resources\phat_handopen.png" />
+    <None Include="Resources\phat_handpoint.png" />
+    <None Include="Resources\phat_json.png" />
+    <None Include="Resources\phat_mixed.png" />
+    <None Include="Resources\phat_path.png" />
+    <None Include="Resources\phat_putaway.png" />
+    <None Include="Resources\phat_ready.png" />
+    <Content Include="sharpdx_direct3d11_1_effects_arm.dll" />
+    <Content Include="sharpdx_direct3d11_1_effects_x64.dll" />
+    <Content Include="sharpdx_direct3d11_1_effects_x86.dll" />
+    <Content Include="x64\d3dcompiler_47.dll" />
+    <Content Include="x86\d3dcompiler_47.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EMGU.CV.3.4.1.2976\build\EMGU.CV.targets'))" />
+  </Target>
+</Project>
