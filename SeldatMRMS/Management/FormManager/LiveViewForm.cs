@@ -107,6 +107,7 @@ namespace SeldatMRMS.Management.FormManager
             MessageBox.Show("FGFGFGFG");
             //ascascs
             //1234567890
+            //llllllll
             Task.Run(() =>
             {
                 cameraStrt.capture = new VideoCapture(cameraStrt.url);
