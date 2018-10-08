@@ -104,12 +104,6 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            MessageBox.Show("FGFGFGFG");
-            MessageBox.Show("FGFGFGFG");
-            MessageBox.Show("FGFGFGFG");
-            //ascascs
-            //1234567890
-            //llllllll
             Task.Run(() =>
             {
                 cameraStrt.capture = new VideoCapture(cameraStrt.url);
