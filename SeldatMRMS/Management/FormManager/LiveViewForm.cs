@@ -106,7 +106,7 @@ namespace SeldatMRMS.Management.FormManager
             timer1.Start();
             MessageBox.Show("FGFGFGFG");
             MessageBox.Show("FGFGFGFG");
-            MessageBox.Show("FGFGFGFG");
+            MessageBox.Show("dddddddddddddddddd");
             //ascascs
             //1234567890
             //llllllll
