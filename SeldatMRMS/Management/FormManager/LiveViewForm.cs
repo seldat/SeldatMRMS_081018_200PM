@@ -104,6 +104,7 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            MessageBox.Show("ascasc");
             //1234567890
             Task.Run(() =>
             {
