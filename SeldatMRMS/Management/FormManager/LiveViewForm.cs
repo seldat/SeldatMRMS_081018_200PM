@@ -104,6 +104,9 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+
+            MessageBox.Show("luat 1");
+            MessageBox.Show("luat 2");
             MessageBox.Show("Phat");
             MessageBox.Show("Phat");
             MessageBox.Show("Phat");
@@ -137,6 +140,10 @@ namespace SeldatMRMS.Management.FormManager
                 toolStripProgressBar1.Increment(2);
             }
         }
-        
+
+        private void streamView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
