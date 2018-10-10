@@ -104,6 +104,18 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
             Task.Run(() =>
             {
                 cameraStrt.capture = new VideoCapture(cameraStrt.url);
