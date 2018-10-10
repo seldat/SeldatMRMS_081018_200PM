@@ -85,6 +85,7 @@
             this.streamView.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.streamView.TabIndex = 0;
             this.streamView.TabStop = false;
+            this.streamView.Click += new System.EventHandler(this.streamView_Click);
             // 
             // panel2
             // 
@@ -159,7 +160,7 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(52, 29);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(51, 29);
             this.toolStripStatusLabel1.Text = "Waiting";
             // 
             // timer1

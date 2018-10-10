@@ -104,6 +104,8 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            MessageBox.Show("luat 1");
+            MessageBox.Show("luat 2");
             Task.Run(() =>
             {
                 cameraStrt.capture = new VideoCapture(cameraStrt.url);
@@ -125,6 +127,10 @@ namespace SeldatMRMS.Management.FormManager
                 toolStripProgressBar1.Increment(2);
             }
         }
-        
+
+        private void streamView_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
