@@ -104,9 +104,18 @@ namespace SeldatMRMS.Management.FormManager
         private void LiveViewForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            MessageBox.Show("FGFGFGFG");
-            MessageBox.Show("FGFGFGFG");
-            MessageBox.Show("dddddddddddddddddd");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
+            MessageBox.Show("Phat");
             //ascascs
             //1234567890
             //llllllll
